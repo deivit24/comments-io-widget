@@ -109,8 +109,6 @@ class CommentWidget {
             await this.postComment()
         })
 
-        this.createLogo()
-
         if (this.errorMessage) {
             this.showError()
         }
@@ -121,16 +119,6 @@ class CommentWidget {
         Object.keys(this.position).forEach(key => {
             element.style[key] = this.position[key];
         });
-    }
-
-    createLogo() {
-        const el = document.querySelector('#logo')
-        const url = this.COMMENTS_URL;
-        const linkElement = document.createElement('a');
-        linkElement.href = url;
-        linkElement.target = '_blank';
-        linkElement.appendChild(el.cloneNode(true));
-        el.parentNode.replaceChild(linkElement, el);
     }
 
     async reloadComments(selectedValue = null) {
@@ -462,7 +450,7 @@ class CommentWidget {
           </div>  
           <div class="footer">
           <p class="small">powered by</p>
-          <img src=${Icons.commentsLogo()} id="logo" alt="comments.io">
+          <a href=${this.COMMENTS_URL} target="_blank" class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-0-hover">comments.io</a>
           </div>
         </div>
       </div>

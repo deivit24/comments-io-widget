@@ -1,5 +1,3 @@
-import logo from './logo.svg'
-
 const Icons = {
     thumbsUp(hasLiked = false) {
         const color = hasLiked ? '#007bff' : 'currentColor'
@@ -38,10 +36,6 @@ const Icons = {
             </svg>
         `
     },
-    
-    commentsLogo() {
-        return `${logo}`
-    }
 }
 
 export default Icons
