@@ -1,5 +1,4 @@
 import './styles.scss'
-import * as bootstrap from "bootstrap"
 import CommentsApi, {showCodeMessage} from "./api.js";
 import Icons from "./icons.js";
 import moment from "moment";
