@@ -1,4 +1,4 @@
-import './styles.scss'
+import {styles} from "./assets.js";
 import CommentsApi, {showCodeMessage} from "./api.js";
 import Icons from "./icons.js";
 import Render from "./render.js";
@@ -24,10 +24,18 @@ class CommentWidget {
         this.pagination = this.defaultPagination()
         this.repliesPagination = this.defaultRepliesPagination()
         this.initializeWidget();
+        this.injectStyles()
     }
 
     position = "";
     COMMENTS_URL = 'https://comments-io.onrender.com/'
+
+    injectStyles() {
+        const styleTag = document.createElement("style");
+        styleTag.innerHTML = styles.replace(/^\s+|\n/gm, "");
+
+        document.head.appendChild(styleTag);
+    }
 
     defaultPagination() {
         return {
