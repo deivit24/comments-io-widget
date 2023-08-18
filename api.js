@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const codeMessageMap = {
     400: '[400]:Request parameter error',
     401: '[401]:account not logged in',
@@ -13,16 +11,6 @@ const codeMessageMap = {
 export const showCodeMessage = (error, code) => {
     const message = error.message ? error.message : codeMessageMap[JSON.stringify(code)];
     return message || 'Abnormal network connection, Please try again later!';
-};
-
-export const formatJsonToUrlParams = (data) => {
-    return typeof data === 'object'
-        ? Object.keys(data)
-            .map((key) => {
-                return `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`;
-            })
-            .join('&')
-        : '';
 };
 
 const BASE_PREFIX = 'https://comments-io-api.onrender.com/api';
