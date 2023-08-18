@@ -337,13 +337,14 @@ class CommentWidget {
 
     async postComment(data = {}) {
         try {
+            const commentMessage = document.querySelector('#commentMessage')
             if (!data.body) {
-                const commentMessage = document.querySelector('#commentMessage')
                 data.body = commentMessage.value
             }
             data.storyId = this.storyId
             const res = (await CommentsApi.createComment(this.apiKey, data)).data
             if (!data.commentId) {
+                commentMessage.value = ''
                 this.comments.unshift(res)
                 this.renderComments()
             } else {
