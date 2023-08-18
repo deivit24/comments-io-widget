@@ -1,7 +1,6 @@
 import './styles.scss'
 import CommentsApi, {showCodeMessage} from "./api.js";
 import Icons from "./icons.js";
-import moment from "moment";
 import Render from "./render.js";
 
 class CommentWidget {
