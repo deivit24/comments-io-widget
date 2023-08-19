@@ -96,7 +96,8 @@ class CommentWidget {
 
         this.createWidgetContent();
         const button = document.querySelector("#messageButton");
-        button.style.position = "fixed"
+        button.style.position = "fixed";
+        button.style.zIndex = 100;
         this.applyPosition(button);
 
         button.addEventListener("click", async () => {
