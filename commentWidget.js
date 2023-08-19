@@ -231,7 +231,7 @@ class CommentWidget {
         const quickReplyBtns = document.querySelectorAll('.quick-reply-button')
         likeButtons.forEach(button => {
             button.addEventListener('click', async () => {
-                const commentId = button.getAttribute('data-reply-id');
+                const commentId = button.getAttribute('data-comment-id');
                 await this.likeComment(commentId);
             });
         });
